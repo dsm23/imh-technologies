@@ -21,6 +21,9 @@ jobs:
       - run:
           name: unit-and-coverage
           command: npm test -- --coverage
+      - run:
+          name: npm-build
+          command: npm build
       - store_artifacts:
           path: test-results.xml
           prefix: tests

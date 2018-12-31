@@ -17,7 +17,8 @@ const arrLabels = [
   { label: "Products and Services", path: ROUTER.PRODUCTS_AND_SERVICES }
 ];
 
-const David: React.StatelessComponent<Props> = ({ title, location: { pathname } }) => {
+export default withRouter(
+  ({ title, location: { pathname } }: Props) => {
     const [isExpanded, setIsExpanded] = React.useState(false);
 
     const handleClick = () => setIsExpanded(!isExpanded);
@@ -63,6 +64,5 @@ const David: React.StatelessComponent<Props> = ({ title, location: { pathname } 
         </div>
       </nav>
     );
-  };
-
-export default withRouter(David);
+  }
+);
